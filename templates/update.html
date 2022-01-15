@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Home {% endblock title %}
+{% block body %}
+<!-- Navigation  -->
+
+    <!-- Form for the todo list -->
+
+    <div class="container my-3">
+        <div class="shadow p-3 mb-5 bg-body rounded">
+        <h2>Update Your Todo</h2>
+        <form action="/update/{{todo.sno}}" method="POST">
+            <div class="mb-3">
+              <label for="title" class="form-label">Todo</label>
+              <input type="text" class="form-control" name="title" id="title"value="{{todo.title}}" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+              <label for="desc" class="form-label">Description</label>
+              <input type="text" class="form-control" value="{{todo.desc}}" name="desc" id="desc" required>
+            </div>
+            <button type="submit" class="btn btn-dark">Update</button>
+          </form>
+    </div>
+    </div>
+
+    <!-- List of the todo from here -->
+    {% endblock body %}
